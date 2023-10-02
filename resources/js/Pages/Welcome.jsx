@@ -6,14 +6,14 @@ export default function Welcome({ auth }) {
     <>
       <Head title="Welcome" />
       <div className="min-h-screen">
-        <nav className="fixed op-0 h-16 md:h-20 w-full bg-white border-b-2 border-gray-200">
+        <nav className="fixed op-0 h-16 md:h-20 w-full bg-gray-50 border">
           <div className="flex justify-between max-w-7xl h-full mx-auto px-4">
             <div className="flex items-center">
               <Link href="/">
                 <div className="flex">
                   <ApplicationLogo className={'h-8 md:h-12'} />
                   <div className="pl-3 flex justify-center items-center">
-                    <p className="text-lg md:text-2xl font-semibold text-gray-500">
+                    <p className="text-lg md:text-3xl font-semibold text-gray-600">
                       シンプル単語カード
                     </p>
                   </div>
@@ -24,38 +24,29 @@ export default function Welcome({ auth }) {
               {auth.user ? (
                 <Link href={route('dashboard')}>
                   <button
-                    className=" px-4 md:px-12 py-1 border-2 rounded-lg 
-                      border-blue-200 hover:border-blue-300
-                      bg-blue-100 hover:bg-blue-200"
+                    className=" px-4 md:px-12 py-2 rounded-lg 
+                      bg-green-500 hover:bg-green-400"
                   >
-                    <p className="md:text-lg font-bold text-gray-500 hover:text-gray-800">
-                      ログイン
-                    </p>
+                    <p className="md:text-lg font-bold text-white">ホーム画面へ</p>
                   </button>
                 </Link>
               ) : (
                 <>
                   <Link href={route('login')} className="mr-2 md:mr-6">
                     <button
-                      className="px-2 md:px-12 py-1 border-2 rounded-lg 
-                      border-blue-200 hover:border-blue-300
-                      bg-blue-100 hover:bg-blue-200"
+                      className="px-2 md:px-12 py-2 rounded-lg 
+                      bg-blue-400 hover:bg-blue-300"
                     >
-                      <p className="md:text-lg font-bold text-gray-500 hover:text-gray-800">
-                        ログイン
-                      </p>
+                      <p className="md:text-lg font-bold text-white">ログイン</p>
                     </button>
                   </Link>
 
                   <Link href={route('register')} className="md:mr-1">
                     <button
-                      className="px-2 md:px-12 py-1 border-2 rounded-lg 
-                      border-red-200 hover:border-red-300
-                      bg-red-100 hover:bg-red-200"
+                      className="px-2 md:px-12 py-2 rounded-lg 
+                      bg-red-400 hover:bg-red-300"
                     >
-                      <p className="md:text-lg font-bold text-gray-500 hover:text-gray-800">
-                        新規登録
-                      </p>
+                      <p className="md:text-lg font-bold text-white">新規登録</p>
                     </button>
                   </Link>
                 </>
@@ -63,21 +54,21 @@ export default function Welcome({ auth }) {
             </div>
           </div>
         </nav>
-        <div className="bg-gray-100 h-full w-full">
-          <div className="pt-32 pb-24 bg-white h-full max-w-xl mx-auto">
+        <div className="bg-gray-50 h-full w-full">
+          <div className="pt-40 pb-24 bg-white h-full max-w-xl mx-auto">
             <div className="flex justify-center">
               <img src="/images/study.png" alt="本と人物の画像" className="h-48" />
             </div>
-            <p className="flex justify-center mt-6 text-gray-600 text-4xl font-bold">
+            <p className="flex justify-center mt-12 text-gray-600 text-4xl font-bold">
               シンプル単語カード
             </p>
-            <p className="flex justify-center mt-12 text-gray-500 font-bold">
+            <p className="flex justify-center mt-12 text-gray-600 font-bold">
               受験や資格勉強でお馴染みの単語カードを
             </p>
-            <p className="flex justify-center mt-2 text-gray-500 font-bold">
+            <p className="flex justify-center mt-2 text-gray-600 font-bold">
               ブラウザで手軽に使えるよう再現した
             </p>
-            <p className="flex justify-center mt-2 text-gray-500 font-bold">
+            <p className="flex justify-center mt-2 text-gray-600 font-bold">
               シンプルな学習補助アプリケーションです!
             </p>
 
@@ -88,21 +79,19 @@ export default function Welcome({ auth }) {
             <div className="flex justify-center mt-12">
               <Link href={route('login')} className="mr-6 md:mr-8">
                 <button
-                  className="px-12 md:px-16 py-2 border-2 rounded-lg 
-                      border-blue-200 hover:border-blue-300
-                      bg-blue-100 hover:bg-blue-200"
+                  className="px-12 md:px-16 py-3 rounded-lg 
+                      bg-blue-400 hover:bg-blue-300"
                 >
-                  <p className="text-xl font-bold text-gray-500 hover:text-gray-800">ログイン</p>
+                  <p className="text-xl font-bold text-white">ログイン</p>
                 </button>
               </Link>
 
               <Link href={route('register')}>
                 <button
-                  className="px-12 md:px-16 py-2 border-2 rounded-lg 
-                      border-red-200 hover:border-red-300
-                      bg-red-100 hover:bg-red-200"
+                  className="px-12 md:px-16 py-3 rounded-lg 
+                      bg-red-400 hover:bg-red-300"
                 >
-                  <p className="text-xl font-bold text-gray-500 hover:text-gray-800">新規登録</p>
+                  <p className="text-xl font-bold text-white">新規登録</p>
                 </button>
               </Link>
             </div>
@@ -137,17 +126,16 @@ export default function Welcome({ auth }) {
               <p>--------------------------------------------------------</p>
             </div>
             <p className="flex justify-center mt-8 text-gray-600 text-2xl font-bold">
-              新規登録はこちらから
+              新規登録はこちら
             </p>
             <p className="flex justify-center text-gray-500 font-bold">↓</p>
             <div className="flex justify-center mt-1">
               <Link href={route('register')}>
                 <button
-                  className="px-28 py-4 border-2 rounded-lg 
-                      border-red-200 hover:border-red-300
-                      bg-red-100 hover:bg-red-200"
+                  className="px-28 py-4 rounded-lg 
+                      bg-red-400 hover:bg-red-300"
                 >
-                  <p className="text-xl font-bold text-gray-500 hover:text-gray-800">新規登録</p>
+                  <p className="text-xl font-bold text-white">新規登録</p>
                 </button>
               </Link>
             </div>
@@ -158,17 +146,16 @@ export default function Welcome({ auth }) {
             <div className="flex justify-center mt-1">
               <Link href={route('login')}>
                 <button
-                  className="px-28 py-4 border-2 rounded-lg 
-                      border-blue-200 hover:border-blue-300
-                      bg-blue-100 hover:bg-blue-200"
+                  className="px-28 py-4 rounded-lg 
+                      bg-blue-400 hover:bg-blue-300"
                 >
-                  <p className="text-xl font-bold text-gray-500 hover:text-gray-800">ログイン</p>
+                  <p className="text-xl font-bold text-white">ログイン</p>
                 </button>
               </Link>
             </div>
           </div>
         </div>
-        <footer className="text-center h-8 border-t border-gray-300">
+        <footer className="text-center h-8 bg-gray-50">
           <p>
             <small>© Hiroki Ochiai</small>
           </p>
