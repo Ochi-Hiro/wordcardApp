@@ -4,8 +4,10 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faMagnifyingGlass, faFolderPlus } from '@fortawesome/free-solid-svg-icons';
 
-export default function Authenticated({ user, header, children }) {
+const Authenticated = ({ user, children }) => {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
   return (
@@ -91,8 +93,8 @@ export default function Authenticated({ user, header, children }) {
 
         <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
           <div className="pt-2 pb-3 space-y-1">
-            <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-              Dashboard
+            <ResponsiveNavLink href={route('index')} active={route().current('index')}>
+              index
             </ResponsiveNavLink>
           </div>
 
@@ -112,19 +114,34 @@ export default function Authenticated({ user, header, children }) {
         </div>
       </nav>
 
-      {header && (
-        <header className="bg-white shadow">
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-              <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                Dashboard
-              </NavLink>
-            </div>
+      <header className="bg-gray-50 border-b border-gray-100">
+        <div className="max-w-xl mx-auto px-8 md:px-12">
+          <div className="flex justify-between items-center h-10">
+            <NavLink href={route('index')} active={route().current('index')}>
+              <div className="flex justify-center">
+                <FontAwesomeIcon icon={faHouse} className="h-5 mb-1 ml-3 text-blue-400" />
+                <p className="flex items-center ml-3 mr-3 text-gray-600 font-bold">ホーム</p>
+              </div>
+            </NavLink>
+            <NavLink href={route('index')} active={route().current('index')}>
+              <div className="flex justify-center">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="h-5 mb-1 ml-4 text-blue-400" />
+                <p className="flex items-center ml-4 mr-4 text-gray-600 font-bold">検索</p>
+              </div>
+            </NavLink>
+            <NavLink href={route('index')} active={route().current('index')}>
+              <div className="flex justify-center">
+                <FontAwesomeIcon icon={faFolderPlus} className="h-5 mb-1 text-blue-400" />
+                <p className="flex items-center ml-1 text-gray-600 font-bold">フォルダ作成</p>
+              </div>
+            </NavLink>
           </div>
-        </header>
-      )}
+        </div>
+      </header>
 
       <main>{children}</main>
     </div>
   );
-}
+};
+
+export default Authenticated;

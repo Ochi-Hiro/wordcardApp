@@ -1,7 +1,7 @@
 import { Link, Head } from '@inertiajs/react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 
-export default function Welcome({ auth }) {
+const Welcome = ({ auth }) => {
   return (
     <>
       <Head title="Welcome" />
@@ -22,7 +22,7 @@ export default function Welcome({ auth }) {
             </div>
             <div className="flex items-center">
               {auth.user ? (
-                <Link href={route('dashboard')}>
+                <Link href={route('index')}>
                   <button
                     className=" px-4 md:px-12 py-2 rounded-lg 
                       bg-green-500 hover:bg-green-400"
@@ -163,4 +163,6 @@ export default function Welcome({ auth }) {
       </div>
     </>
   );
-}
+};
+
+export default Welcome;
