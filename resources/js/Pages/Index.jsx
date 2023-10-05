@@ -3,10 +3,7 @@ import { Head } from '@inertiajs/react';
 
 const Index = ({ auth }) => {
   return (
-    <AuthenticatedLayout
-      user={auth.user}
-      header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
-    >
+    <AuthenticatedLayout user={auth.user}>
       <Head title="ホーム" />
 
       <div className="py-12">
