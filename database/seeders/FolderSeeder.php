@@ -14,17 +14,17 @@ class FolderSeeder extends Seeder
             [
             'user_id' => 1,
             'name'=>'テストフォルダ1',
-            'is_public'=>'1',
+            'is_public'=>1,
             ],
             [
             'user_id' => 2,
             'name'=>'テストフォルダ2',
-            'is_public'=>'0',
+            'is_public'=>0,
             ],
             [
             'user_id' => 1,
             'name'=>'テストフォルダ3',
-            'is_public'=>'0',
+            'is_public'=>0,
             ],
         ]);
     }
