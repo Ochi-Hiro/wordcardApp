@@ -16,8 +16,10 @@ class IndexController extends Controller
         ->orderBy('id', 'desc')
         ->get();
 
-        dd($folders);
+        // dd($folders);
 
-        return Inertia::render('Index');
+        return Inertia::render('Index',[
+            'folders' => $folders
+        ]);
     }
 }
