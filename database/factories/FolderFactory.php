@@ -3,23 +3,20 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use \App\Models\User;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Folder>
- */
 class FolderFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $date=$this->faker->dateTimeBetween('-1year');
+
         return [
-            'user_id' => $this->faker->randomNumber(),
+            'user_id' => $this->faker->numberBetween(1, 4),
             'name' => $this->faker->name(10),
             'is_public' => $this->faker->boolean(),
+            'created_at' => $date,
+            'updated_at' => $date,
         ];
     }
 }
