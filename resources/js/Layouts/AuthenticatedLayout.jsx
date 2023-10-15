@@ -129,7 +129,7 @@ const Authenticated = ({ user, children }) => {
                 <p className="flex items-center ml-4 mr-4 text-gray-600 font-bold">検索</p>
               </div>
             </NavLink>
-            <NavLink href={route('index')} active={route().current('index')}>
+            <NavLink href={route('folder.create')} active={route().current('folder.create')}>
               <div className="flex justify-center">
                 <FontAwesomeIcon icon={faFolderPlus} className="h-5 mb-1 text-blue-400" />
                 <p className="flex items-center ml-1 text-gray-600 font-bold">フォルダ作成</p>
