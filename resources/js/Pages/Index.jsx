@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faSwatchbook, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Index = ({ auth, folders }) => {
-  console.log(folders);
-
   return (
     <AuthenticatedLayout user={auth.user}>
       <Head title="ホーム" />
@@ -15,7 +13,10 @@ const Index = ({ auth, folders }) => {
           <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div className="max-w-5xl flex flex-wrap mx-auto px-8 py-8">
               {folders.map((folder) => (
-                <div className="w-52 h-44 mx-4 mb-6 px-4 pt-4 border border-gray-300 rounded-lg">
+                <div
+                  className="w-52 h-44 mx-4 mb-6 px-4 pt-4 border border-gray-300 rounded-lg"
+                  key={folder.id}
+                >
                   <p className="text-lg font-semibold text-gray-600 truncate pl-2">{folder.name}</p>
                   <div className="mt-2">
                     <button className="w-full rounded-lg bg-blue-400 hover:bg-blue-300 py-3">
